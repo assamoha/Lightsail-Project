@@ -16,11 +16,11 @@ resource "aws_lightsail_instance" "custom" {
   bundle_id         = "nano_1_0"
   user_data         = "sudo yum install -y httpd && sudo systemctl start httpd && sudo systemctl enable httpd && echo '<h1>Deployed via Terraform</h1>' | sudo tee /var/www/html/index.html"
 }
-resource "aws_iam_group" "inventory" {
-  name = "inventory"
+resource "aws_iam_group" "fastpick" {
+  name = "fastpick"
 }
-resource "aws_iam_user" "rassani" {
-  name = "rassani"
+resource "aws_iam_user" "mariam" {
+  name = "mariam"
 }
 output "instance_ip" {
   value = aws_lightsail_instance.custom.public_ip_address
